@@ -1,0 +1,6 @@
+{
+  "name": "ElecPet.PlayerChecks",
+  "references": ["ElecPet"],
+  "includePlatforms": ["Editor", "WindowsStandalone64"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

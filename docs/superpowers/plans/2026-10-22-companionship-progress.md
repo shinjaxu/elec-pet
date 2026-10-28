@@ -1,0 +1,23 @@
+# 执行记录 — plan: docs/superpowers/plans/2026-10-22-companionship.md
+
+- 已获用户授权直接修改当前项目，使用 executing-plans、test-driven-development、verification-before-completion。
+- Ruling: 当前目录不是 Git 仓库，按已确认设计原地交付，不建立工作树；保留本记录替代依赖 Git 的进度脚本。代价是不能通过 Git 回滚本轮。
+- Pre-flight: 任务 1 的 Relationship 供任务 2 使用；任务 2 的生活状态和目标供任务 4 使用；任务 3 的存档供任务 4 使用，接口无冲突。
+- Ruling: 计划存档采用编解码委托，文件 I/O 与数据验证在 Core，Unity JsonUtility 在 Runtime；保持独立测试不依赖 Unity。
+- Task 1: complete — 先观察缺少 PetRelationship 的编译失败，实现后 16 项运动、100 项互动检查通过。
+- Task 2: Ruling: 极小工作区扩大后位置必须再次满足 88 像素安全边距，测试由 X=50 修正为 X=88；仍不恢复缩放前的旧目标。
+- Task 2: complete — 16 项运动、100 项互动、22 项生活流程检查通过。
+- Task 3: complete — 新增存档类型前检查编译失败，实现后 15 项存档检查通过；系统临时目录的重命名被沙箱拒绝，已获自动审批在沙箱外验证，未改变存档算法绕过限制。
+- Task 4: complete — Unity 首轮 22/22；补充向玩具伸爪的回归测试先失败（22/23），新增 WatchingToy/PlayingToy 表现后 23/23 通过。
+- Ruling: 轻碰使用专用表现状态并将接近停距改为 40 像素，避免复用招呼动作时只挥爪、不前伸；独立行为规则和随机动作枚举范围保持原有语义。
+- Task 5: 真实 Unity 相机三张预览已导出；查看休息、轻碰后调整预览中窝垫位置避免画面裁切，运行时位置未变。
+- Final review: 独立只读审查完成；发现等待亲近时被旧扑食抢占、键盘未中断亲近、工作区单独变化未检测、边缘小球不滚动四项，均纳入修复。未搁置任何审查项。
+- Final: fixed 等待亲近被抢占 — 实际 Controller 回归 RED（23/24）→GREEN（24/24）。
+- Final: fixed 边角小球 — 四角接近不重叠、滚动可见与滚动中缩放回归 RED→GREEN；独立生活检查增至 36 项。边缘无前向空间时沿边拨球。
+- Final: fixed 输入和工作区 — 传入只含有无键按住的布尔活动标记，不读取字符；每秒只读检查工作区，变化时重算。输入忙碌取消亲近的检查通过；真实键盘和任务栏变化仍须实机验收。
+- Final: 增加完整 BeginPress/DragPress/EndPress 与实际 Update 冻结保存测试，Unity 28/28 通过；抚摸凑头阶段差异检查随后 RED（28/29），正在验证补齐后的结果。
+- Ruling: 无法提供真实任务栏变化的自动化输入时，以原生适配层编译、已覆盖的工作区重算和明确的实机验收条目交付；不把静态检查宣称为完整实机验证。
+- Final: fixed 熟悉后凑头 — 表现回归 RED（28/29）→GREEN（29/29），原有全姿态安全边距仍通过。
+- Task 5: complete — 最终独立 167 项、Unity 29/29 和 Windows 只读探测通过；最终预览导出成功；Windows 构建退出 0，日志确认 Success，随附 ElecPet.dll 已更新。
+- Final: minor (deferred): 无。审查的四项问题已修复，真实桌面焦点、缩放、键盘与任务栏变化列为未实测验收项。
+- Ruling: 当前无 Git 仓库，finishing-a-development-branch 的分支合并菜单不适用，保留当前目录与验证记录交付；未创建仓库、分支或提交。记录保留以便核对本轮决策。

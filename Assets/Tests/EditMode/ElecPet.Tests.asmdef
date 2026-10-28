@@ -1,0 +1,6 @@
+{
+  "name": "ElecPet.Tests",
+  "references": ["ElecPet"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}
